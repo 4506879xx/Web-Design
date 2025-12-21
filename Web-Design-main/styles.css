@@ -4,20 +4,21 @@
     height: 50px;
     background-color: rgb(255, 255, 255);
 }
-  
+
 .header img {
     width: auto;
     height: 100%;
     max-width: 100%;
     object-fit: contain;
 }
-  
+
 img {
     width: 500px;
     height: 500px;
     display: table;
     margin: 0 auto;
 }
+
 .images {
     display: flex;
     flex-wrap: wrap;
@@ -45,6 +46,25 @@ img {
 .image:hover img {
     transform: scale(1.2);
 }
+
+/*在about那裏的 */
+/* 三張統一大小的圖片展示 */
+.uniform-photo {
+    width: 30%;
+    /* 三張並排時，每張佔 30%（中間會有間隙） */
+    height: 300px;
+    /* 固定高度，讓三張視覺高度一樣 */
+    object-fit: cover;
+    /* 裁切邊邊，但不拉伸變形，重點保持在中間 */
+    object-position: center;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    /* 每張自動置中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 可選：加陰影更好看 */
+}
+
 ul {
     list-style: none;
     margin: 0;
@@ -73,23 +93,27 @@ li a {
 li a:hover {
     background-color: #c8c8c8;
 }
+
 /*========== 聯絡我 ==========*/
-.center{
+.center {
     margin: auto;
     width: 50%;
     border: 10px solid green;
     padding: 10px;
 }
-#rcorners{
+
+#rcorners {
     border-radius: 15px 50px;
     background: #73AD21;
     padding: 20px;
     width: 200px;
     height: 150px;
 }
+
 .form-title {
     text-align: center;
 }
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -122,7 +146,8 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
@@ -146,27 +171,34 @@ input, textarea {
 .submit-button:hover {
     background-color: rgb(194, 34, 34);
 }
+
 /*========== FOOTER ==========*/
-footer{
+footer {
     padding: 15px;
     text-align: center;
     word-spacing: 10px;
-    color: rgb(0, 0, 0); /* 添加這一行 */
+    color: rgb(0, 0, 0);
+    /* 添加這一行 */
 }
-.footer__li{
+
+.footer__li {
     display: flex;
     margin: 0 auto;
     flex-direction: column;
     row-gap: .80rem;
     column-gap: 10rem;
 }
+
 .footer {
-    position: fixed; /* 將position設置為fixed */
+    position: fixed;
+    /* 將position設置為fixed */
     bottom: 0;
     width: 100%;
-    height: 50px; /* 頁腳高度 */
-}  
-.footer__contact-list{
+    height: 50px;
+    /* 頁腳高度 */
+}
+
+.footer__contact-list {
     list-style: none;
     padding: 0;
     display: flex;
@@ -177,17 +209,22 @@ footer{
 .footer__contact-list li {
     margin-right: 1.5rem;
     font-size: 1.2rem;
-    color: rgb(0, 0, 0); /* 設置字體顏色為白色 */
+    color: rgb(0, 0, 0);
+    /* 設置字體顏色為白色 */
 }
-span{
+
+span {
     display: table;
     margin: 0 auto;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
+
 hr {
     border-top: 1px solid gray;
     margin: 20px 0;
@@ -196,20 +233,32 @@ hr {
 /* ========== 手機排版（響應式設計） ========== */
 /* ========== 手機版：保持電腦版布局，只縮小尺寸（不改直排） ========== */
 @media (max-width: 768px) {
+
     /* 整體字體縮小 */
     h1 {
-        font-size: 24px !important;   /* 原30px → 24px */
+        font-size: 24px !important;
+        /* 原30px → 24px */
     }
-    h2, .form-title {
+
+    h2,
+    .form-title {
         font-size: 18px !important;
     }
-    p, label, li, .footer__contact-list li {
-        font-size: 14px !important;   /* 文字變小但可讀 */
+
+    p,
+    label,
+    li,
+    .footer__contact-list li {
+        font-size: 14px !important;
+        /* 文字變小但可讀 */
     }
-    input, textarea {
+
+    input,
+    textarea {
         font-size: 14px !important;
         padding: 8px !important;
     }
+
     .submit-button {
         padding: 8px 16px !important;
         font-size: 16px !important;
@@ -218,19 +267,25 @@ hr {
     /* 圖片牆：保持多欄並排，但每張圖變小 */
     .images {
         justify-content: center !important;
-        padding: 0 10px !important;   /* 左右留點邊 */
-        gap: 10px !important;         /* 間距縮小 */
+        padding: 0 10px !important;
+        /* 左右留點邊 */
+        gap: 10px !important;
+        /* 間距縮小 */
     }
+
     .image {
-        width: 150px !important;      /* 原200px → 150px（手機還是能排3~4張） */
+        width: 150px !important;
+        /* 原200px → 150px（手機還是能排3~4張） */
         height: 150px !important;
         margin-right: 10px !important;
         margin-bottom: 10px !important;
     }
+
     .image img {
         max-width: 100% !important;
         max-height: 100% !important;
     }
+
     /* 保持 hover 放大效果 */
     .image:hover img {
         transform: scale(1.2);
@@ -238,24 +293,31 @@ hr {
 
     /* 導航選單：保持橫排，只是字小一點、padding小一點 */
     li a {
-        padding: 12px 8px !important;  /* 原16px → 上下12px、左右8px */
+        padding: 12px 8px !important;
+        /* 原16px → 上下12px、左右8px */
         font-size: 14px !important;
     }
 
     /* 頁腳：保持橫排，只是間距縮小 */
     .footer {
-        position: fixed !important;    /* 還是固定在底部 */
+        position: fixed !important;
+        /* 還是固定在底部 */
         bottom: 0 !important;
         height: 50px !important;
         padding: 10px !important;
     }
+
     .footer__contact-list {
-        display: flex !important;      /* 保持橫排 */
+        display: flex !important;
+        /* 保持橫排 */
         justify-content: center !important;
         align-items: center !important;
-        flex-wrap: wrap !important;    /* 如果真的放不下會自動換行 */
-        gap: 10px !important;          /* 間距縮小 */
+        flex-wrap: wrap !important;
+        /* 如果真的放不下會自動換行 */
+        gap: 10px !important;
+        /* 間距縮小 */
     }
+
     .footer__contact-list li {
         margin-right: 0 !important;
         margin-bottom: 0 !important;
@@ -266,9 +328,11 @@ hr {
     .center {
         width: 90% !important;
     }
+
     .form-container {
         margin-top: 30px !important;
     }
+
     .form {
         width: 90% !important;
     }
