@@ -1,8 +1,39 @@
 /*========== INDEX CSS ==========*/
+/* 優雅金色調色板 */
+:root {
+    --gold-light: #F8F0D8;
+    /* 淺金 - 段落、次要文字 */
+    --gold-primary: #E6C87D;
+    /* 次要連結 */
+    --gold-rich: #D4AF37;
+    /* 主要金黃 - 標題、導航、重要文字 */
+    --gold-dark: #B8860B;
+    /* 邊框、暗金 */
+    --gold-accent: #F1C40F;
+    /* hover 更亮金 */
+    --bg-deep: #0A0A14;
+    /* 最深背景 */
+    --bg-card: #14182a;
+    /* 深藍背景 - 用於 header、導航、卡片等 */
+    --bg-light: #f8f9fa;
+    /* 保留原 uniform-photo 的淺背景（若需統一可改） */
+}
+
+/* 全站深色背景 + 金色文字基礎 */
+body {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, #1a1a2e 100%);
+    color: var(--gold-light) !important;
+    font-family: 'Microsoft JhengHei', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
 .header {
     position: relative;
     height: 50px;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-deep) 100%);
+    border-bottom: 3px solid var(--gold-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
 }
 
 .header img {
@@ -34,6 +65,9 @@ img {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--gold-dark);
+    border-radius: 10px;
 }
 
 .image img {
@@ -68,24 +102,30 @@ img {
     display: block;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
+    /* 保留原淺背景，若想統一深色可改成 var(--bg-card) */
     min-width: 250px;
     /* 最小寬度，避免太小 */
     max-width: 350px;
     /* 最大寬度，避免太大 */
+    border: 1px solid var(--gold-dark);
 }
 
+/* ========== 導航選單 ========== */
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--bg-card);
+    border-bottom: 3px solid var(--gold-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 ul.wrap {
     display: table;
     margin: 0 auto;
+    background: var(--bg-card);
 }
 
 li {
@@ -94,34 +134,42 @@ li {
 
 li a {
     display: block;
-    color: rgb(0, 0, 0);
+    color: var(--gold-rich) !important;
     text-align: center;
     padding: 16px;
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 li a:hover {
-    background-color: #c8c8c8;
+    background-color: rgba(212, 175, 55, 0.25);
+    color: var(--gold-accent) !important;
 }
 
 /*========== 聯絡我 ==========*/
 .center {
     margin: auto;
     width: 50%;
-    border: 10px solid green;
+    border: 10px solid var(--gold-dark);
     padding: 10px;
+    background-color: var(--bg-card);
+    border-radius: 10px;
 }
 
 #rcorners {
     border-radius: 15px 50px;
-    background: #73AD21;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold-rich));
     padding: 20px;
     width: 200px;
     height: 150px;
+    color: #000;
 }
 
 .form-title {
     text-align: center;
+    color: var(--gold-rich);
+    font-size: 30px;
 }
 
 .form-container {
@@ -129,11 +177,10 @@ li a:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-}
-
-.form-title {
-    text-align: center;
-    font-size: 30px;
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--gold-dark);
 }
 
 .form {
@@ -154,6 +201,7 @@ li a:hover {
 label {
     font-size: 18px;
     margin-bottom: 5px;
+    color: var(--gold-light);
 }
 
 input,
@@ -161,25 +209,133 @@ textarea {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(194, 34, 34);
+    border: 1px solid var(--gold-dark);
     width: 100%;
     box-sizing: border-box;
     margin-top: 5px;
+    background-color: rgba(26, 26, 36, 0.8);
+    color: var(--gold-light);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--gold-rich);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
 }
 
 .submit-button {
-    background-color: rgb(194, 34, 34);
-    color: #fff;
+    background: linear-gradient(to right, var(--gold-dark), var(--gold-rich));
+    color: #000;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .submit-button:hover {
-    background-color: rgb(194, 34, 34);
+    background: linear-gradient(to right, var(--gold-rich), var(--gold-dark));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ===== QR 區塊父層：強制卡片等高 ===== */
+.social-qr-section {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0A0A14 0%, #1a1a2e 100%);
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* ⭐ 等高關鍵 */
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* ===== 單張卡片 ===== */
+.qr-image {
+    margin-top: auto;
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;   /* ⭐ 關鍵 */
+    overflow: hidden;         /* ⭐ 關鍵 */
+}
+
+.qr-image img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;          /* ⭐ 保險 */
+    max-height: 100%;         /* ⭐ 保險 */
+    object-fit: contain;
+    display: block;
+}
+/* ===== 文字區高度鎖定 ===== */
+.qr-title {
+    font-size: 34px;
+    color: #D4AF37;
+    margin-bottom: 25px;
+}
+
+.qr-subtitle {
+    font-size: 20px;
+    color: #E6C87D;
+    min-height: 80px;
+    /* ⭐ 防止某張字多 */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.qr-action {
+    font-size: 22px;
+    color: #F1C40F;
+    font-weight: bold;
+    min-height: 60px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== QR 圖吸到底 ===== */
+.qr-image {
+    margin-top: auto;
+    /* ⭐ 關鍵 */
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+}
+
+.qr-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ===== 手機版仍然等高（左右滑） ===== */
+@media (max-width: 768px) {
+    .qr-item {
+        min-height: 820px;
+        width: 360px;
+    }
+
+    .qr-image {
+        width: 240px;
+        height: 240px;
+    }
 }
 
 /*========== FOOTER ==========*/
@@ -187,8 +343,9 @@ footer {
     padding: 15px;
     text-align: center;
     word-spacing: 10px;
-    color: rgb(0, 0, 0);
-    /* 添加這一行 */
+    color: var(--gold-light);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-deep) 100%);
+    border-top: 3px solid var(--gold-dark);
 }
 
 .footer__li {
@@ -201,11 +358,11 @@ footer {
 
 .footer {
     position: fixed;
-    /* 將position設置為fixed */
     bottom: 0;
     width: 100%;
     height: 50px;
-    /* 頁腳高度 */
+    background: var(--bg-card);
+    z-index: 999;
 }
 
 .footer__contact-list {
@@ -219,13 +376,13 @@ footer {
 .footer__contact-list li {
     margin-right: 1.5rem;
     font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    /* 設置字體顏色為白色 */
+    color: var(--gold-light);
 }
 
 span {
     display: table;
     margin: 0 auto;
+    color: var(--gold-light);
 }
 
 html,
@@ -236,18 +393,16 @@ body {
 }
 
 hr {
-    border-top: 1px solid gray;
+    border-top: 1px solid var(--gold-dark);
     margin: 20px 0;
 }
 
 /* ========== 手機排版（響應式設計） ========== */
-/* ========== 手機版：保持電腦版布局，只縮小尺寸（不改直排） ========== */
 @media (max-width: 768px) {
 
     /* 整體字體縮小 */
     h1 {
         font-size: 24px !important;
-        /* 原30px → 24px */
     }
 
     h2,
@@ -260,7 +415,6 @@ hr {
     li,
     .footer__contact-list li {
         font-size: 14px !important;
-        /* 文字變小但可讀 */
     }
 
     input,
@@ -278,14 +432,11 @@ hr {
     .images {
         justify-content: center !important;
         padding: 0 10px !important;
-        /* 左右留點邊 */
         gap: 10px !important;
-        /* 間距縮小 */
     }
 
     .image {
         width: 150px !important;
-        /* 原200px → 150px（手機還是能排3~4張） */
         height: 150px !important;
         margin-right: 10px !important;
         margin-bottom: 10px !important;
@@ -304,14 +455,12 @@ hr {
     /* 導航選單：保持橫排，只是字小一點、padding小一點 */
     li a {
         padding: 12px 8px !important;
-        /* 原16px → 上下12px、左右8px */
         font-size: 14px !important;
     }
 
     /* 頁腳：保持橫排，只是間距縮小 */
     .footer {
         position: fixed !important;
-        /* 還是固定在底部 */
         bottom: 0 !important;
         height: 50px !important;
         padding: 10px !important;
@@ -319,13 +468,10 @@ hr {
 
     .footer__contact-list {
         display: flex !important;
-        /* 保持橫排 */
         justify-content: center !important;
         align-items: center !important;
         flex-wrap: wrap !important;
-        /* 如果真的放不下會自動換行 */
         gap: 10px !important;
-        /* 間距縮小 */
     }
 
     .footer__contact-list li {
@@ -351,5 +497,198 @@ hr {
     img {
         max-width: 100% !important;
         height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .qr-container {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .qr-item {
+        width: 280px;
+    }
+
+    .qr-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .qr-title {
+        font-size: 28px;
+    }
+
+    .qr-subtitle {
+        font-size: 16px;
+    }
+
+    .qr-action {
+        font-size: 18px;
+    }
+}
+
+/* ===== 強制金色統一（確保沒有殘留黑/白文字）===== */
+body,
+p,
+div,
+span,
+label,
+footer,
+.footer__contact-list li {
+    color: var(--gold-light) !important;
+}
+
+h1,
+h2,
+h3,
+.form-title,
+li a {
+    color: var(--gold-rich) !important;
+}
+
+a:hover,
+li a:hover {
+    color: var(--gold-accent) !important;
+}
+
+.header,
+ul,
+footer,
+.footer {
+    background: var(--bg-card) !important;
+}
+
+/* ===== 解決導航被大圖蓋住的終極方案 ===== */
+.header,
+nav,
+ul,
+ul.wrap,
+.navbar,
+.main-navigation,
+.site-navigation {
+    position: relative;
+    /* 或 fixed，看你喜歡 */
+    z-index: 9999 !important;
+    /* 超高層級，壓過所有圖片 */
+    background-color: #14182a !important;
+    /* 確保背景不透明 */
+    padding: 10px 0 !important;
+}
+
+/* 如果你頁面有大圖或 hero section，加上這段讓它不要蓋導航 */
+.hero,
+.hero-image,
+.fullscreen-bg,
+section:first-of-type,
+.home-section,
+img[style*="position"],
+div[style*="background-image"] {
+    margin-top: 80px !important;
+    /* 給導航留出空間 */
+    padding-top: 0 !important;
+}
+
+/* 最強核彈：強制所有可能蓋住導航的元素往下推 */
+body>*:first-child img,
+body>div:first-child,
+body>section:first-child,
+header+div,
+header+section,
+.header+* {
+    margin-top: 80px !important;
+}
+
+/* 如果你 header 高度不夠高，直接把它撐開 */
+.header {
+    min-height: 80px !important;
+    padding: 15px 0 !important;
+}
+
+/* ===== 版權宣告強制顯示在最底部，絕對不會被蓋住 ===== */
+.site-copyright {
+    width: 100%;
+    background: linear-gradient(135deg, #14182a 0%, #0A0A14 100%);
+    color: #E6C87D;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 15px;
+    border-top: 3px solid #B8860B;
+    /* 金色上邊框，高端感 */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    /* 改成 relative，避免被 fixed 頁腳蓋 */
+    z-index: 10000;
+    margin-top: 50px;
+    /* 跟上方內容保持距離 */
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright-text {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright-text br {
+    display: none;
+    /* 電腦版不換行 */
+}
+
+/* 手機版優化 */
+@media (max-width: 768px) {
+    .site-copyright {
+        padding: 15px 10px;
+        font-size: 13px;
+        min-height: 70px;
+    }
+
+    .copyright-text br {
+        display: block;
+        /* 手機版換行，比較好讀 */
+    }
+}
+
+/* 強制讓主要內容不要蓋到版權 */
+body {
+    margin-bottom: 100px !important;
+    /* 給版權留出空間 */
+}
+
+/* 如果你有固定頁腳（.footer），把它移到版權上面或移除 */
+.footer {
+    position: static !important;
+    /* 取消 fixed，避免重疊 */
+}
+
+/* ===== 強制 QR Code 區塊永遠左右並排（即使手機也左右） ===== */
+.qr-container {
+    flex-direction: row !important;
+    /* 強制水平排列 */
+    flex-wrap: nowrap !important;
+    /* 不允許換行 */
+    overflow-x: auto;
+    /* 如果螢幕太小，出現水平捲軸 */
+    gap: 50px !important;
+    padding: 20px !important;
+}
+
+.qr-item {
+    flex: 0 0 380px !important;
+    /* 固定寬度，不會縮小 */
+    min-width: 380px !important;
+}
+
+/* 完全取消手機版上下排列 */
+@media (max-width: 768px) {
+    .qr-container {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .social-qr-section {
+        padding: 60px 10px !important;
     }
 }
