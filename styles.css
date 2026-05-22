@@ -357,10 +357,8 @@ footer {
 }
 
 .footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    height: 50px;
     background: var(--bg-card);
     z-index: 999;
 }
@@ -653,15 +651,10 @@ header+section,
 
 /* 強制讓主要內容不要蓋到版權 */
 body {
-    margin-bottom: 100px !important;
-    /* 給版權留出空間 */
+    margin-bottom: 0 !important;
 }
 
-/* 如果你有固定頁腳（.footer），把它移到版權上面或移除 */
-.footer {
-    position: static !important;
-    /* 取消 fixed，避免重疊 */
-}
+
 
 /* ===== 強制 QR Code 區塊永遠左右並排（即使手機也左右） ===== */
 .qr-container {

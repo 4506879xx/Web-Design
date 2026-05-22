@@ -20,13 +20,6 @@ function submitHandler(){
 //在body onload
 function init(){
     subText.value=initSubject;
-    toText.value=initTo;
-    bodyText.value=initBody;
-}
-//在body onload
-function init(){
-    subText.value=initSubject;
-    toText.value=initTo;
     bodyText.value=initBody;
 }
 const form = document.querySelector('.form');
