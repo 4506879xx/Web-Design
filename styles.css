@@ -685,3 +685,80 @@ body {
         padding: 60px 10px !important;
     }
 }
+
+/* ========== 響應式改進：針對圖片和容器 ========== */
+/* 改進 img 標籤的響應性 */
+@media (max-width: 1200px) {
+    img {
+        width: 80%;
+        height: auto;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 90% !important;
+        height: auto !important;
+        max-width: 300px !important;
+    }
+    
+    /* Header 自適應 */
+    .l-header {
+        padding: 10px 0;
+    }
+    
+    .nav__logo h1 {
+        font-size: 24px;
+    }
+    
+    .nav__logo p {
+        font-size: 14px;
+    }
+    
+    /* 導航選單自動換行 */
+    .nav__list {
+        gap: 8px !important;
+    }
+    
+    li a {
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+    }
+    
+    /* 圖片牆響應式 */
+    .image {
+        width: 130px !important;
+        height: 130px !important;
+        margin-right: 8px !important;
+        margin-bottom: 8px !important;
+    }
+    
+    /* 工作流程步驟卡片 */
+    .step {
+        padding: 15px !important;
+    }
+    
+    .step h3 {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 95% !important;
+        height: auto !important;
+        max-width: 200px !important;
+    }
+    
+    .image {
+        width: 100px !important;
+        height: 100px !important;
+        margin-right: 5px !important;
+    }
+    
+    li a {
+        padding: 8px 6px !important;
+        font-size: 12px !important;
+    }
+}
